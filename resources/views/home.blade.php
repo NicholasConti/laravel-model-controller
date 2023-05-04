@@ -7,9 +7,20 @@
          @vite('resources/js/app.js')
     </head>
     <body>
-        <div class="container">
-            <h1>Template Classe 89</h1>
-        </div>
-
+        <h1>MY MOVIES</h1>
+        <div class="row">
+            @foreach ($movies as $movie)
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Title: {{ $movie->title}}</li>
+                  <li class="list-group-item">OG Title: {{ $movie->original_title}}</li>
+                  <li class="list-group-item">Nationality: {{ $movie->nationality}}</li>
+                  <li class="list-group-item">Date: {{ $movie->date}}</li>
+                  <li class="list-group-item">Vote: {{ $movie->vote}}</li>
+                </ul>
+              </div>
+            
+            @endforeach
+        </div>        
     </body>
 </html>
